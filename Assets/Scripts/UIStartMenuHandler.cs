@@ -39,6 +39,14 @@ public class UIStartMenuHandler : MonoBehaviour
     {
         highScorePlayer = GameManager.Instance.highScorePlayer;
         highScore = GameManager.Instance.highScore;
-        bestScore.text = "Best Score: " + highScorePlayer + " : " + highScore.ToString();
+        bestScore.text = "Best Score\n" + highScorePlayer + " : " + highScore.ToString();
+        if (highScorePlayer == "")
+        {
+            bestScore.gameObject.SetActive(false);
+        }
+        else
+        {
+            bestScore.gameObject.SetActive(true);
+        }
     }
 }
